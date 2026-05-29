@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AuthContext } from './AuthContextValue'
 
-const LOGIN_PASSWORD = 'password123'
+const LOGIN_PASSWORD = '123456'
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
@@ -9,14 +9,14 @@ export function AuthProvider({ children }) {
     return saved ? JSON.parse(saved) : null
   })
 
-  const login = (password) => {
-    if (password === LOGIN_PASSWORD) {
-      const authUser = { name: 'Admin' }
+  const login = (email, password) => {
+    if (email === 'ebasahuluka@gmail.com' && password === LOGIN_PASSWORD) {
+      const authUser = { name: 'Admin', email }
       setUser(authUser)
       window.localStorage.setItem('gebeyaUser', JSON.stringify(authUser))
       return true
     }
-    throw new Error('Incorrect password')
+    throw new Error('Incorrect email or password')
   }
 
   const logout = () => {

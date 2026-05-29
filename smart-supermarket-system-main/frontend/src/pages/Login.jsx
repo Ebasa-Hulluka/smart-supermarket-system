@@ -9,6 +9,7 @@ import storeBackground from '../assets/images/nathalia-rosa-rWMIbqmOxrY-unsplash
 export default function Login() {
   const navigate = useNavigate()
   const { user, login } = useAuth()
+  const [email, setEmail] = useState('ebasahuluka@gmail.com')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
@@ -23,7 +24,7 @@ export default function Login() {
     setError('')
 
     try {
-      login(password)
+      login(email, password)
       navigate('/', { replace: true })
     } catch (err) {
       setError(err.message)
@@ -60,11 +61,22 @@ export default function Login() {
             </div>
             <div>
               <h2 className="text-2xl font-semibold text-slate-950">Company login</h2>
-              <p className="mt-1 text-sm text-slate-500">Enter the company password to continue.</p>
+              <p className="mt-1 text-sm text-slate-500">Enter your email and company password to continue.</p>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
+            <Input
+              label="Email address"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter email address"
+              autoComplete="email"
+              required
+              className="rounded-xl border-slate-300 bg-white/95 focus:border-emerald-700 focus:ring-emerald-100"
+            />
+
             <Input
               label="Company password"
               type="password"
@@ -80,7 +92,7 @@ export default function Login() {
             {error && <div className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">{error}</div>}
 
             <Button type="submit" className="w-full py-3">
-              Enter dashboard
+              Sign in
             </Button>
           </form>
         </section>
