@@ -16,7 +16,7 @@ export function AuthProvider({ children }) {
       window.localStorage.setItem('gebeyaUser', JSON.stringify(authUser))
       return true
     }
-    throw new Error('Incorrect emil or password')
+    throw new Error('Incorrect email or password')
   }
 
   const logout = () => {
