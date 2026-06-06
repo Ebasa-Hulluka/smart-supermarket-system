@@ -8,7 +8,7 @@ This repository contains two folders:
 - `frontend` — React + Vite single-page app (TailwindCSS + React Router)
 
 **Login credentials**
-- Company password: `password123`
+- Company password:`password123`
 
 ## Key features
 
