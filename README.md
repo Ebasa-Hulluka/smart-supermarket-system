@@ -5,7 +5,7 @@ A small full-stack retail dashboard for tracking products, sales and store opera
 This repository contains two folders:
 
 - `backend` — Node/Express API with MongoDB (Mongoose)
-- `frontend` — React + Vite single-page app (TailwindCSS + React Router)
+- `frontend` — React  + Vite single-page app (TailwindCSS + React Router)
 
 **Login credentials**
 - Company password:`password123`
