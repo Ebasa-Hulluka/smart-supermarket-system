@@ -10,7 +10,7 @@ This repository contains two folders:
 **Login credentials**
 - Company password:`password123`
 
-## Key features 
+## Key features  
 
 - Product CRUD (create, read, update, delete)
 - Sales recording (checkout) and listing
